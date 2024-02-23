@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>gestion-evenementielle-2</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <label>Entrer votre prénom </label>
+            <input type="text" v-model="nom"><p>
+            <button @click="clicke('Bonjour ')">Dis Bonjour</button>
+            <button @click="clicke('Hello ')">Dis Hello</button>
+        </div>
+        <script>
+            app = Vue.createApp({
+                data(){
+                    return {
+                        nom: ""
+                    }
+                },
+                methods: {
+                    clicke(text) {
+                        alert(text + this.nom)
+                    }
+                }
+            });
+            app.mount("#app");
+        </script>
+    </body>
+</html>

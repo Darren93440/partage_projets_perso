@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>argument-dynamique-2</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+            <li v-for="personne in personnes">{{personne.prenom}} {{personne.nom}} {{personne.age}}</li>
+            </ul>
+        </div>
+        <script>
+            app = Vue.createApp({
+                data(){
+                    return {
+                        personnes: [
+                            { prenom: "darren", nom: "de lemos", age: 24},
+                            { prenom: "jordan", nom: "de lemos", age: 25},
+                            { prenom: "romain", nom: "campos", age: 26}
+                        ]
+                    }
+                }
+            });
+            app.mount("#app");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pendu</title>
+    </head>
+    
+    <body>
+        <p>PENDU</p>
+        <label>Vie</label>
+        <input type="text" id="vie" disabled="disabled">
+        <br><br>
+        <label>Lettres :</label>
+        <input type="text" id="lettres" onkeyup="valider_nouveau()" required maxlength="1">
+        <button type="button" id="validator" onclick="validerBouton()">valider</button>
+        <label><br><br>ENIGME</label>
+        <input type="text" id="enigme" disabled="disabled">
+        <label><br><br>LETTRE UTILISER</label>
+        <input type="text" id="lettresUtiliser" disabled="disabled">
+        <br><br>
+        <br><br>
+        <div id="mon_image"></div>
+        <input type="button" value="Recommencer" onClick="document.location.reload(true)">
+    </body>
+    <script src="script.js"></script>
+</html>

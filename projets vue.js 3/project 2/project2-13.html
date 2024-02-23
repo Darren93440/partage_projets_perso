@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>project2-13</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <bienvenue @coucou="disBonjour"></bienvenue>
+        </div>
+        <script>
+            app = Vue.createApp({
+                methods: {
+                    disBonjour(){
+                        alert("Le parent dis bonjour")
+                    }
+                }
+            });
+            app.component("bienvenue", {
+                template: "<button @click='$emit(\"coucou\")'>Clicker ici</button>"
+            })
+            app.mount("#app");
+        </script>
+    </body>
+</html>

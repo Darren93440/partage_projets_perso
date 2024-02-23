@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>inner html</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>Nom : <span v-text="personne.nom"></span></p>
+            <p>prenom : <span v-text="personne.prenom"></span></p>
+            <p>age : <span v-text="personne.age"></span></p>
+        </div>
+        <script>
+            app = Vue.createApp({
+                data(){
+                    return{
+                        personne: {
+                            prenom: "Darren",
+                            nom: "CACA",
+                            age: 23
+                        }
+
+                    }
+                }
+            });
+            let changement = app.mount("#app");
+            setTimeout(function() {
+                changement.personne.age = 30}, 3000);
+        </script>
+    </body>
+</html>

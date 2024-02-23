@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>classes-conditionnelle</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            .rouge {
+                color: red;
+            }
+            li {
+                list-style-type: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <p>Quels langage connaissez-vous?</p>
+            <input type="text" v-model="unLang">
+            <input type="button" value="valider" @click="ajouter">
+            <ul>
+                <li v-for="lan in langages">
+                    <input type="checkbox" v-model="lan.etatCase">
+                    <span :class="{rouge:lan.etatCase}">{{lan.lang}}</span>
+                </li>
+            </ul>
+        </div>
+        <script>
+            app = Vue.createApp({
+                data() {
+                    return {
+                        unLang: "",
+                        langages: []
+                    }
+                },
+                methods: {
+                    ajouter() {
+                        this.langages.push(
+                            {
+                                lang: this.unLang,
+                                etatCase: false
+                            }
+                        );
+                    }
+                }
+            });
+            app.mount("#app");
+        </script>
+    </body>
+</html>

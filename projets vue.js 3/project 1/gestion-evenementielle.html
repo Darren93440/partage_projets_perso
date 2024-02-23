@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>gestion-evenementielle</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>Nombre de click sur le bouton: {{counter}}</p>
+            <button @click="counter++">nombre click</button>
+        </div>
+        <script>
+            app = Vue.createApp({
+                data(){
+                    return {
+                        counter: 0
+                    }
+                }
+            });
+            app.mount("#app");
+        </script>
+    </body>
+</html>

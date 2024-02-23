@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>gestion-des-style-inline</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            couleur <select v-model="couleur">
+                <option value="black" selected>Noir</option>
+                <option value="red">Rouge</option>
+                <option value="green">Vert</option>
+                <option value="blue">Bleu</option>
+            </select>
+            taille <select v-model="taille">
+                <option value="16px" selected>16 px</option>
+                <option value="25px">25 px</option>
+                <option value="40px">40 px</option>
+                <option value="60px">60 px</option>
+            </select>
+            <br>
+            <p :style="{color:couleur, fontSize:taille}">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit at facere accusantium vel, voluptatem alias voluptate, impedit laborum distinctio molestiae nisi! Explicabo quisquam reiciendis quidem inventore nostrum labore mollitia voluptas.
+            </p>
+        </div>
+        <script>
+            app = Vue.createApp({
+                data(){
+                    return {
+                        couleur: "black",
+                        taille: "16px"
+                    }
+                }
+            });
+            app.mount("#app");
+        </script>
+    </body>
+</html>

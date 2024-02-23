@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>v-if-conditionnelle</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>Quels langages de programation connaissez-vous?</p>
+            <input type="text" v-model="texte">
+            <input type="button" value="Ajouter" @click="ajouter">
+            <div v-for="langage in langages">
+                <input type="checkbox" v-model="langage.etat">
+                {{langage.lang}}
+                <span v-if="langage.etat"> est coché</span>
+                <span v-else="langage.etat"> est décoché</span>
+            </div>
+        </div>
+        <script>
+            app = Vue.createApp({
+                data(){
+                    return {
+                        langages: [],
+                        texte: ""
+                    }
+                },
+                methods: {
+                    ajouter(){
+                        this.langages.push({lang: this.texte, etat: false})
+                    }
+                }
+            });
+            app.mount("#app");
+        </script>
+    </body>
+</html>
